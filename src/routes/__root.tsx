@@ -151,7 +151,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { src: "https://cdn.tailwindcss.com?plugins=forms,container-queries" },
       { children: TAILWIND_CONFIG, id: "tailwind-config" },
     ],
-    styles: [{ children: SHARED_CSS }],
+    
   }),
   shellComponent: RootShell,
   component: RootComponent,
