@@ -72,27 +72,76 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const TAILWIND_CONFIG = `tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "outline": "#99907c","surface-container": "#201f1f","outline-variant": "#4d4635",
+        "secondary-container": "#474746","tertiary-fixed": "#dbe1ff","inverse-surface": "#e5e2e1",
+        "on-background": "#e5e2e1","secondary-fixed": "#e5e2e1","primary": "#f2ca50",
+        "on-tertiary-container": "#254188","surface-tint": "#e9c349","on-secondary-fixed": "#1c1b1b",
+        "background": "#131313","primary-fixed-dim": "#e9c349","on-surface-variant": "#d0c5af",
+        "secondary": "#c8c6c5","error": "#ffb4ab","tertiary": "#bfcdff","on-surface": "#e5e2e1",
+        "surface-container-low": "#1c1b1b","surface-container-highest": "#353534","error-container": "#93000a",
+        "tertiary-container": "#97b0ff","on-primary-container": "#554300","surface-bright": "#3a3939",
+        "surface-container-high": "#2a2a2a","on-primary-fixed": "#241a00",
+        "surface-container-lowest": "#0e0e0e","on-error-container": "#ffdad6",
+        "on-secondary-fixed-variant": "#474746","surface-dim": "#131313","inverse-primary": "#735c00",
+        "on-primary-fixed-variant": "#574500","surface": "#131313","tertiary-fixed-dim": "#b4c5ff",
+        "on-secondary-container": "#b7b5b4","on-primary": "#3c2f00","inverse-on-surface": "#313030",
+        "on-tertiary-fixed-variant": "#27438a","secondary-fixed-dim": "#c8c6c5",
+        "primary-container": "#d4af37","on-tertiary": "#082b72","surface-variant": "#353534",
+        "on-tertiary-fixed": "#00174b","primary-fixed": "#ffe088","on-secondary": "#313030",
+        "on-error": "#690005"
+      },
+      borderRadius: { "DEFAULT": "0.25rem","lg": "0.5rem","xl": "0.75rem","full": "9999px" },
+      spacing: { "container-max": "1200px","margin-desktop": "64px","unit": "8px","margin-mobile": "20px","gutter": "24px" },
+      maxWidth: { "container-max": "1200px" },
+      fontFamily: {
+        "body-lg": ["Inter"],"body-md": ["Inter"],"headline-md": ["Playfair Display"],
+        "label-md": ["Inter"],"display-lg": ["Playfair Display"],
+        "display-lg-mobile": ["Playfair Display"],"headline-sm": ["Playfair Display"]
+      },
+      fontSize: {
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+      }
+    }
+  }
+};`;
+
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Talent Jack | Multidisciplinary Creative" },
+      { name: "description", content: "Portfolio of Talent Jack — scriptwriter, digital marketer, product designer, and developer." },
+      { property: "og:title", content: "Talent Jack | Multidisciplinary Creative" },
+      { property: "og:description", content: "Portfolio of Talent Jack — scriptwriter, digital marketer, product designer, and developer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" },
     ],
+    scripts: [
+      { src: "https://cdn.tailwindcss.com?plugins=forms,container-queries" },
+      { children: TAILWIND_CONFIG, id: "tailwind-config" },
+    ],
+    
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -102,7 +151,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
@@ -113,6 +162,7 @@ function RootShell({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
