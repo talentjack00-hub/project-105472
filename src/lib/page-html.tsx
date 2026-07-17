@@ -23,6 +23,8 @@ export function PageHtml({ html, bodyClass }: Props) {
       const t = (e.target as HTMLElement).closest("a") as HTMLAnchorElement | null;
       if (!t) return;
       const href = t.getAttribute("href") || "";
+      const target = t.getAttribute("target");
+      if (target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey) return;
       if (href.startsWith("/")) {
         e.preventDefault();
         router.navigate({ to: href });
