@@ -185,8 +185,12 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 <style>
 @media print {
   @page { size: A4; margin: 12mm; }
-  html, body { background: #ffffff !important; color: #000 !important; }
-  .no-print { display: none !important; }
+  html, body { background: #ffffff !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print,
+  [data-lovable-badge],
+  #lovable-badge,
+  a[href*="lovable.dev"],
+  a[href*="lovable.app"] { display: none !important; }
   .cv-main { padding: 0 !important; background: #ffffff !important; }
   .cv-sheet { box-shadow: none !important; max-width: 100% !important; }
   .cv-sheet > div { padding: 0 !important; }
