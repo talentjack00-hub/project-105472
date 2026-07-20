@@ -1,6 +1,6 @@
 
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-white/10 z-50">
+<!-- Top Navigation Bar (hidden in print) -->
+<header class="no-print fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-white/10 z-50">
 <div class="flex justify-between items-center px-6 md:px-16 py-4 max-w-container-max mx-auto w-full">
 <a href="/" class="font-headline-sm text-headline-sm font-bold text-primary">Talent Jack</a>
 <nav class="hidden md:flex gap-8 items-center">
@@ -9,51 +9,51 @@
 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="/cv">CV</a>
 <a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="/contact">Contact</a>
 </nav>
-<button class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md rounded-none hover:opacity-90 transition-all active:scale-95">Inquire</button>
+<a href="/cv?print=1" class="bg-primary text-on-primary px-4 sm:px-6 py-2 font-label-md text-label-md rounded-none hover:opacity-90 transition-all active:scale-95">Download PDF</a>
 </div>
 </header>
 
-<main class="pt-28 pb-24 px-4 md:px-8 bg-background">
-<div class="max-w-5xl mx-auto bg-white text-neutral-900 shadow-2xl">
-<div class="px-10 md:px-16 py-14">
+<main class="cv-main pt-24 sm:pt-28 pb-16 sm:pb-24 px-3 sm:px-6 md:px-8 bg-background">
+<div class="cv-sheet max-w-5xl mx-auto bg-white text-neutral-900 shadow-2xl">
+<div class="px-5 sm:px-10 md:px-16 py-8 sm:py-12 md:py-14">
 
 <!-- Name Header -->
-<header class="mb-10">
-<h1 class="text-5xl md:text-6xl font-black tracking-tight uppercase">Talent Jack</h1>
-<p class="text-lg md:text-xl tracking-[0.25em] uppercase text-neutral-700 mt-2">Digital Marketing Student</p>
+<header class="mb-8 sm:mb-10">
+<h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight uppercase leading-tight break-words">Talent Jack</h1>
+<p class="text-sm sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase text-neutral-700 mt-2">Digital Marketing Student</p>
 </header>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
 
 <!-- Left Column -->
-<aside class="space-y-10">
+<aside class="space-y-7 sm:space-y-10">
 
 <!-- Contact -->
 <section>
-<h2 class="text-lg font-black uppercase tracking-[0.25em] mb-4">Contact</h2>
-<ul class="space-y-3 text-sm">
+<h2 class="text-base sm:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.25em] mb-3 sm:mb-4">Contact</h2>
+<ul class="space-y-2.5 text-sm">
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-base">call</span>
-<span>078 990 5274</span>
+<span class="material-symbols-outlined text-base shrink-0">call</span>
+<span class="min-w-0 break-words">0789905274</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-base">mail</span>
-<span class="break-all">talentjack00@gmail.com</span>
+<span class="material-symbols-outlined text-base shrink-0">mail</span>
+<span class="min-w-0 break-all">talentjack00@gmail.com</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-base">location_on</span>
-<span>39/B</span>
+<span class="material-symbols-outlined text-base shrink-0">link</span>
+<span class="min-w-0 break-all">linkedin.com/in/talent-jack-6668393a9</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-base">person</span>
-<span>Talent Jack</span>
+<span class="material-symbols-outlined text-base shrink-0">location_on</span>
+<span class="min-w-0 break-words">39/B Tangai Street, Harare</span>
 </li>
 </ul>
 </section>
 
 <!-- Education -->
 <section>
-<h2 class="text-lg font-black uppercase tracking-[0.25em] mb-4">Education</h2>
+<h2 class="text-base sm:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.25em] mb-3 sm:mb-4">Education</h2>
 <div class="space-y-5 text-sm">
 <div>
 <p class="font-semibold">2025 &mdash; PRESENT</p>
@@ -72,7 +72,7 @@
 
 <!-- Skills -->
 <section>
-<h2 class="text-lg font-black uppercase tracking-[0.25em] mb-4">Skills</h2>
+<h2 class="text-base sm:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.25em] mb-3 sm:mb-4">Skills</h2>
 <ul class="list-disc list-inside space-y-1 text-sm text-neutral-800">
 <li>Content Marketing</li>
 <li>Social Media Strategy</li>
@@ -86,7 +86,7 @@
 
 <!-- Languages -->
 <section>
-<h2 class="text-lg font-black uppercase tracking-[0.25em] mb-4">Languages</h2>
+<h2 class="text-base sm:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.25em] mb-3 sm:mb-4">Languages</h2>
 <ul class="list-disc list-inside space-y-1 text-sm text-neutral-800">
 <li>English (Fluent)</li>
 <li>Shona (Native)</li>
@@ -96,11 +96,11 @@
 </aside>
 
 <!-- Right Column -->
-<div class="md:col-span-2 space-y-10">
+<div class="md:col-span-2 space-y-8 sm:space-y-10">
 
 <!-- Profile -->
 <section>
-<h2 class="text-2xl font-black uppercase tracking-widest mb-3 border-b border-neutral-900 pb-2">Profile</h2>
+<h2 class="text-xl sm:text-2xl font-black uppercase tracking-widest mb-3 border-b border-neutral-900 pb-2">Profile</h2>
 <p class="text-sm leading-relaxed text-neutral-800">
 Digital marketing student at Uncommon.org specializing in marketing, with a growing portfolio of brand, content, and pitch-deck work for real clients. I combine sharp visual instincts with a strategist&#39;s mindset &mdash; building campaigns and creative that help small brands look bigger and communicate clearer. Passionate about storytelling, brand identity, and turning ideas into launch-ready decks.
 </p>
@@ -108,17 +108,17 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 
 <!-- Experience -->
 <section>
-<h2 class="text-2xl font-black uppercase tracking-widest mb-5 border-b border-neutral-900 pb-2">Experience</h2>
-<div class="space-y-7">
+<h2 class="text-xl sm:text-2xl font-black uppercase tracking-widest mb-4 sm:mb-5 border-b border-neutral-900 pb-2">Experience</h2>
+<div class="space-y-6 sm:space-y-7">
 
-<div class="relative pl-6 border-l-2 border-neutral-900">
+<div class="relative pl-5 sm:pl-6 border-l-2 border-neutral-900">
 <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-neutral-900"></div>
-<div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-<div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+<div class="min-w-0">
 <p class="font-bold">Uncommon.org</p>
 <p class="text-sm text-neutral-700">Digital Marketing Student &mdash; Marketing Specialization</p>
 </div>
-<span class="text-xs font-semibold text-neutral-600 mt-1 md:mt-0">2025 &mdash; PRESENT</span>
+<span class="text-xs font-semibold text-neutral-600 shrink-0">2025 &mdash; PRESENT</span>
 </div>
 <ul class="list-disc list-inside text-sm text-neutral-800 mt-2 space-y-1">
 <li>Building end-to-end marketing campaigns, from research to creative execution.</li>
@@ -127,14 +127,14 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 </ul>
 </div>
 
-<div class="relative pl-6 border-l-2 border-neutral-900">
+<div class="relative pl-5 sm:pl-6 border-l-2 border-neutral-900">
 <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-neutral-900"></div>
-<div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-<div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+<div class="min-w-0">
 <p class="font-bold">Freelance</p>
 <p class="text-sm text-neutral-700">Brand &amp; Content Designer</p>
 </div>
-<span class="text-xs font-semibold text-neutral-600 mt-1 md:mt-0">2026</span>
+<span class="text-xs font-semibold text-neutral-600 shrink-0">2026</span>
 </div>
 <ul class="list-disc list-inside text-sm text-neutral-800 mt-2 space-y-1">
 <li>Delivered a content marketing campaign for a small business launch.</li>
@@ -148,7 +148,7 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 
 <!-- Projects -->
 <section>
-<h2 class="text-2xl font-black uppercase tracking-widest mb-5 border-b border-neutral-900 pb-2">Selected Projects</h2>
+<h2 class="text-xl sm:text-2xl font-black uppercase tracking-widest mb-4 sm:mb-5 border-b border-neutral-900 pb-2">Selected Projects</h2>
 <ul class="space-y-3 text-sm text-neutral-800">
 <li><span class="font-bold">Talent Jack &mdash; Job Finder App:</span> Personal brand and pitch deck for a job-finder concept.</li>
 <li><span class="font-bold">Content Marketing Campaign:</span> Online growth plan for a small business, including channel strategy and identity.</li>
@@ -158,7 +158,7 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 
 <!-- Interests -->
 <section>
-<h2 class="text-2xl font-black uppercase tracking-widest mb-3 border-b border-neutral-900 pb-2">Interests</h2>
+<h2 class="text-xl sm:text-2xl font-black uppercase tracking-widest mb-3 border-b border-neutral-900 pb-2">Interests</h2>
 <p class="text-sm text-neutral-800">Brand storytelling, editorial design, social media trends, entrepreneurship, and photography.</p>
 </section>
 
@@ -168,8 +168,8 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 </div>
 </main>
 
-<!-- Footer Section -->
-<footer class="w-full py-12 border-t border-white/10 bg-background">
+<!-- Footer Section (hidden in print) -->
+<footer class="no-print w-full py-12 border-t border-white/10 bg-background">
 <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 gap-8 max-w-container-max mx-auto">
 <div class="font-headline-sm text-headline-sm text-primary">Talent Jack</div>
 <div class="flex gap-8">
@@ -181,3 +181,17 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 <p class="text-on-surface-variant font-body-md text-body-md text-center md:text-right">© 2024 Talent Jack. All rights reserved.</p>
 </div>
 </footer>
+
+<style>
+@media print {
+  @page { size: A4; margin: 12mm; }
+  html, body { background: #ffffff !important; color: #000 !important; }
+  .no-print { display: none !important; }
+  .cv-main { padding: 0 !important; background: #ffffff !important; }
+  .cv-sheet { box-shadow: none !important; max-width: 100% !important; }
+  .cv-sheet > div { padding: 0 !important; }
+  section, .relative { break-inside: avoid; page-break-inside: avoid; }
+  h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+  a { color: #000 !important; text-decoration: none !important; }
+}
+</style>
