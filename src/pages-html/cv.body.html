@@ -180,18 +180,39 @@ Digital marketing student at Uncommon.org specializing in marketing, with a grow
 
 <style>
 @media print {
-  @page { size: A4; margin: 12mm; }
-  html, body { background: #ffffff !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: A4; margin: 10mm; }
+  html, body {
+    background: #ffffff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 10.5pt;
+  }
   .no-print,
+  header.no-print,
+  footer.no-print,
   [data-lovable-badge],
   #lovable-badge,
   a[href*="lovable.dev"],
-  a[href*="lovable.app"] { display: none !important; }
-  .cv-main { padding: 0 !important; background: #ffffff !important; }
-  .cv-sheet { box-shadow: none !important; max-width: 100% !important; }
+  a[href*="lovable.app"],
+  iframe[src*="lovable"] { display: none !important; }
+  .cv-main { padding: 0 !important; margin: 0 !important; background: #ffffff !important; }
+  .cv-sheet { box-shadow: none !important; max-width: 100% !important; margin: 0 !important; }
   .cv-sheet > div { padding: 0 !important; }
-  section, .relative { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Force two-column CV layout on print, regardless of viewport width */
+  .cv-sheet .grid.grid-cols-1 {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr !important;
+    gap: 24px !important;
+  }
+  .cv-sheet .md\:col-span-2 { grid-column: span 1 / span 1 !important; }
+
+  section, .relative, li { break-inside: avoid; page-break-inside: avoid; }
   h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+  h1 { font-size: 28pt !important; }
+  h2 { font-size: 12pt !important; }
+  img { max-width: 100% !important; }
   a { color: #000 !important; text-decoration: none !important; }
 }
 </style>
