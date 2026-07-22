@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as CvRouteImport } from './routes/cv'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CvDevelopmentRouteImport } from './routes/cv.development'
@@ -23,6 +24,11 @@ const WorkRoute = WorkRouteImport.update({
 const CvRoute = CvRouteImport.update({
   id: '/cv',
   path: '/cv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -44,6 +50,7 @@ const CvDevelopmentRoute = CvDevelopmentRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/cv': typeof CvRouteWithChildren
   '/work': typeof WorkRoute
   '/cv/development': typeof CvDevelopmentRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/cv': typeof CvRouteWithChildren
   '/work': typeof WorkRoute
   '/cv/development': typeof CvDevelopmentRoute
@@ -59,21 +67,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/cv': typeof CvRouteWithChildren
   '/work': typeof WorkRoute
   '/cv/development': typeof CvDevelopmentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/cv' | '/work' | '/cv/development'
+  fullPaths: '/' | '/about' | '/contact' | '/cv' | '/work' | '/cv/development'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/cv' | '/work' | '/cv/development'
-  id: '__root__' | '/' | '/about' | '/cv' | '/work' | '/cv/development'
+  to: '/' | '/about' | '/contact' | '/cv' | '/work' | '/cv/development'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/cv'
+    | '/work'
+    | '/cv/development'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   CvRoute: typeof CvRouteWithChildren
   WorkRoute: typeof WorkRoute
 }
@@ -92,6 +109,13 @@ declare module '@tanstack/react-router' {
       path: '/cv'
       fullPath: '/cv'
       preLoaderRoute: typeof CvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -131,6 +155,7 @@ const CvRouteWithChildren = CvRoute._addFileChildren(CvRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   CvRoute: CvRouteWithChildren,
   WorkRoute: WorkRoute,
 }
