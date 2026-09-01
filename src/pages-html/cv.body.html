@@ -163,7 +163,7 @@ Digital marketing practitioner working across search, content, paid advertising,
 
 <style>
 @media print {
-  @page { size: A4; margin: 12mm; }
+  @page { size: A4 portrait; margin: 9mm; }
   html, body {
     background: #ffffff !important;
     color: #000 !important;
@@ -184,16 +184,27 @@ Digital marketing practitioner working across search, content, paid advertising,
 
   .cv-grid {
     display: grid !important;
-    grid-template-columns: 1fr 1.7fr !important;
-    gap: 26px !important;
+    grid-template-columns: 1fr 1.75fr !important;
+    gap: 16px !important;
   }
-  .cv-left { border-right: 1px solid #9ca3af !important; padding-right: 20px !important; }
+  .cv-left { border-right: 1px solid #9ca3af !important; padding-right: 14px !important; }
+  .cv-left > section { margin-bottom: 12px !important; }
+  .cv-grid > div > section { margin-bottom: 12px !important; }
+  .cv-grid > div > section > div { margin-bottom: 10px !important; }
 
   section, div, li { break-inside: avoid; page-break-inside: avoid; }
   h1, h2 { break-after: avoid; page-break-after: avoid; }
-  h1 { font-size: 34pt !important; }
-  h2 { font-size: 11pt !important; }
-  p, li { font-size: 9.5pt !important; line-height: 1.6 !important; }
+  h1 { font-size: 24pt !important; }
+  .cv-sheet header p { font-size: 11pt !important; margin-top: 4pt !important; }
+  .cv-sheet header { margin-bottom: 10pt !important; }
+  h2 { font-size: 9.5pt !important; margin-bottom: 5pt !important; }
+  p, li { font-size: 8pt !important; line-height: 1.35 !important; }
+  ul { margin-top: 4pt !important; }
+  li { margin-top: 1.5pt !important; margin-bottom: 0 !important; }
+  ul > li + li { margin-top: 1.5pt !important; }
+  .cv-grid ul { row-gap: 0 !important; }
+  .cv-grid > div > section > div > p { font-size: 9pt !important; }
   a { color: #000 !important; text-decoration: none !important; }
 }
 </style>
+
